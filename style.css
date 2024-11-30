@@ -1,0 +1,213 @@
+/* General Reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #22242a;
+    font-family: 'Poppins', sans-serif;
+}
+.main{
+    min-height: 100vh;
+    width: 100%;
+}
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2vw;
+    width: 100%;
+    background-color:#22242a; /* Navbar background color */
+    position: relative; /* To position the hamburger icon */
+    align-items: center;
+    height: 100%;
+}
+
+.header .logo{
+    width: 13vw;
+    object-fit: cover;
+}
+
+.header .logo img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Navigation Links (Desktop) */
+.header .right {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+.header .right a {
+    color: white;
+    text-decoration: none;
+    font-size: 1vw;
+    transition: color 0.3s ease-in-out;   
+}
+
+.header .right a:hover {
+    color: #ff5722; /* Hover color */
+}
+
+/* Hamburger Menu (Hidden on Desktop) */
+.hamburger {
+    display: none;
+    font-size: 2vw;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    z-index: 999;
+}
+.section1{
+    height: 100%;
+    width: 100%;
+}
+.section1 .text{
+    text-align: center;
+    padding: 2vw;
+    color: white;
+}
+.section1 .text h1{
+    margin: 3vw 0;
+    font-size: 2.5vw;
+    color: white;
+}
+.section1 .text a{
+    text-decoration: none;
+    font-size: 1vw;
+    padding: 0.7vw 2vw;
+    border: 1px solid  gray;background: linear-gradient(90deg, #CC2B5E 0%, #753A88 100%);
+    border-radius: 2vw;
+    color: white;
+    cursor: pointer;
+}
+.section1 .pic{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.section1 .pic .text1 h1{
+    margin-top: 1vw;
+    font-size: 1.5vw;
+    color: rgb(255, 60, 1);
+    font-weight: lighter;
+}
+.section1 .pic .text1 h2{
+    font-size: 1vw;
+    color: white;
+    font-weight: 500;
+}
+.section1 .pic .text1 h3{
+    font-size: 1vw;
+    color: white;
+    font-weight: 400;
+}
+.section1 .pic .image{
+    height: 22vw;
+}
+.section1 .pic .image img{
+    height: 100%;
+    object-fit: cover;
+}
+
+.footer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+   justify-content: space-between;
+}
+.footer .icons{
+    padding: 2vw 2vw;
+    height: 6vw;
+    display: flex;
+    gap: 1vw;
+}
+.footer .icons img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.footer .dots{
+    display: flex;
+    gap: 2vw;
+    color: white;
+    margin-right: 2vw;
+}
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
+    /* Hamburger Menu (Visible on Mobile) */
+    .hamburger {
+        display: block;
+       margin: 1vw 1vw;
+    }
+
+    /* Navigation Links (Hidden by Default) */
+    .header .right {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: -100%; /* Position above the screen initially */
+        left: 0;
+        width: 100%;
+        background-color: #444444bb; /* Mobile menu background */
+        padding: 1vw 0;
+        z-index: 10;
+        transition: top 0.3s ease-in-out; /* Smooth sliding effect */
+    }
+
+    .header .right a {
+        padding: 1vw;
+        text-align: center;
+        width: 100%;
+        font-size: 2vw; /* Adjust font size for smaller screens */
+        border-bottom: 1px solid #555; /* Separator between links */
+        
+    }
+
+    .header .right a:last-child {
+        border-bottom: none; /* Remove border for the last link */
+    }
+
+    /* Show Navigation Links When Active */
+    .header .right.active {
+        display: flex;
+        top: 100%; /* Slide the navbar into view from the top */
+    }
+    .section1 .text{
+        margin-top: 8vw;
+        text-align: center;
+    }
+    .section1 .text h1{
+        font-size: 4vw;
+    }
+    .section1 .text a{
+        font-size: 4vw;
+        border-radius: 4vw;
+        margin-top: 5vw;
+        padding: 0.5vw 4vw;
+    }
+    .section1 .pic{
+        flex-direction: column;
+    }
+    .section1 .pic .text1 h1{
+        font-size: 5vw;
+    }
+    .section1 .pic .text1 h2{
+        font-size: 5vw;
+    }
+    .section1 .pic .text1 h3{
+        font-size: 4.5vw;
+    }
+    .section1 .pic .image{
+        height: 30vw;
+    }
+    .section1 .pic .image img{
+        height: 100%;
+    }
+}

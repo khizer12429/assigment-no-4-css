@@ -1,0 +1,140 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(https://s3-alpha-sig.figma.com/img/5e6e/85c5/5f8014105b330de946f4ae2220ebfdae?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=nHqJOC2t4TQ4CL~QsWRJXhz24V7JEgNuParsq1QqDe4H6jOs1hTS7uFcxzOqRrI24FooGqcNzy77HLRrNs9WM5G3Hvfbk9fHnHkipFII7O73Hg0dwUqRmwTOQkAfdQtZZ2RnlW41QssruhLOQcSh84BS1baHrrt6c8uGbU1YtoZL3oVXRf81EOBjf1iP~B-JChWJBueXmFomSRGYZxWyI5b6wn5GTAk0EQPigWnM6QsJtBKMkT73Ixvx76kTp08dL1P6ukg9gFgeuFsRyB0hRi4Q8wzTpvwoJuxGMBG9RvNJ1YSCdxwk8fBdfJHOYHvmS9-Le73qkl8qyYa20sXQdQ__);
+    font-family: 'Poppins', sans-serif;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2vw 5vw;
+    width: 100%;
+    position: relative;
+    align-items: center;
+    height: 100%;
+}
+
+.header .logo {
+    width: 10vw;
+    object-fit: cover;
+}
+
+.header .logo img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Navigation Links (Desktop) */
+.header .right {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+.header .right a {
+    color: white;
+    text-decoration: none;
+    font-size: 1vw;
+    transition: color 0.3s ease-in-out;
+}
+
+.header .right a:hover {
+    color: #ff5722;
+    /* Hover color */
+}
+
+/* Hamburger Menu (Hidden on Desktop) */
+.hamburger {
+    display: none;
+    font-size: 2vw;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    z-index: 999;
+}
+.section1{
+    height: 100%;
+    width: 100%;
+}
+.section1 .text{
+    text-align: center;
+}
+.section1 .text h1{
+    font-size: 5vw;
+    margin-top: 6vw;
+    text-align: center;
+    background: linear-gradient(90deg, #FC00FF 0%, #00DBDE 100%);
+    background-clip: text; 
+    color: transparent;
+}
+.section1 .text p{
+    font-size: 1vw;
+    color: white;
+    text-align: center;
+    width: 23.5vw;
+    margin: 0 auto;
+}
+.section1 .text button{
+    margin-top: 2vw;
+    padding: 0.8vw 3vw;
+    border-radius: 1.5vw;
+    border: none;
+}
+@media (max-width: 768px) {
+
+    /* Hamburger Menu (Visible on Mobile) */
+    .hamburger {
+        display: block;
+        margin: 1vw 1vw;
+    }
+
+    /* Navigation Links (Hidden by Default) */
+    .header .right {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: -100%;
+        /* Position above the screen initially */
+        left: 0;
+        width: 100%;
+        background-color: #444444bb;
+        /* Mobile menu background */
+        padding: 1vw 0;
+        z-index: 10;
+        transition: top 0.3s ease-in-out;
+        /* Smooth sliding effect */
+    }
+
+    .header .right a {
+        padding: 1vw;
+        text-align: center;
+        width: 100%;
+        font-size: 2vw;
+        /* Adjust font size for smaller screens */
+        border-bottom: 1px solid #555;
+        /* Separator between links */
+
+    }
+
+    .header .right a:last-child {
+        border-bottom: none;
+        /* Remove border for the last link */
+    }
+
+    /* Show Navigation Links When Active */
+    .header .right.active {
+        display: flex;
+        top: 100%;
+        /* Slide the navbar into view from the top */
+    }
+}
